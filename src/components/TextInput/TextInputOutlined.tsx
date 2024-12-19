@@ -333,7 +333,7 @@ const TextInputOutlined = ({
   }
 
   return (
-    <View style={viewStyle}>
+    <View style={viewStyle} accessible={Platform.OS !== 'ios'}>
       {/*
           Render the outline separately from the container
           This is so that the label can overlap the outline
@@ -358,6 +358,7 @@ const TextInputOutlined = ({
             minHeight,
           },
         ]}
+        accessible={Platform.OS !== 'ios'}
       >
         {label ? (
           <InputLabel
@@ -372,6 +373,8 @@ const TextInputOutlined = ({
             {...labelProps}
             labelBackground={LabelBackground}
             maxFontSizeMultiplier={rest.maxFontSizeMultiplier}
+            placeholderColor={outlineColor ?? null}
+            accessible={Platform.OS !== 'ios'}
           />
         ) : null}
         {render?.({
