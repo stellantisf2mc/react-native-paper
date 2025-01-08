@@ -109,6 +109,7 @@ const TouchableRipple = (
       ref={ref}
       disabled={disabled}
       style={[borderless && styles.overflowHidden, style]}
+      accessible={Platform.OS === 'ios' ? false : true}
     >
       {({ pressed }) => (
         <>
