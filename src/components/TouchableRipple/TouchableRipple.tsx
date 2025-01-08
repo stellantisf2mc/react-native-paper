@@ -284,6 +284,7 @@ const TouchableRipple = (
         state.hovered && { backgroundColor: hoverColor },
         typeof style === 'function' ? style(state) : style,
       ]}
+      accessible={Platform.OS === 'ios' ? false : true}
     >
       {(state) =>
         React.Children.only(
